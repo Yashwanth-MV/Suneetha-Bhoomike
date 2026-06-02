@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* RGB channel values for Tailwind opacity modifier support */
+  --cream: 35 35 33;              /* #232321 - Primary Text: Dark Charcoal */
+  --dark: 255 255 255;            /* #FFFFFF - Alternate Bg: Pure White */
+  --dark-2: 248 243 242;          /* #F8F3F2 - Primary Bg: Warm Ivory */
+  --dark-3: 226 217 212;          /* #E2D9D4 - Surface: Soft Parchment */
+  --gold: 124 20 16;              /* #7C1410 - Deep Carnatic Maroon */
+  --gold-light: 233 147 50;       /* #E99332 - Heritage Gold */
+  --muted: 123 99 98;             /* #7B6362 - Muted Text */
+  --muted-2: 189 162 145;         /* #BDA291 - Accent Gold */
+  --border: 124 20 16;            /* #7C1410 base for borders */
+  --border-light: 124 20 16;      /* #7C1410 base for light borders */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--dark));
+  color: rgb(var(--cream));
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(var(--dark));
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--gold));
+  border-radius: 2px;
+}
+
+/* Lenis smooth scroll */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Video overlay */
+.video-overlay {
+  background: linear-gradient(to bottom, rgba(17,16,16,0.4) 0%, rgba(17,16,16,0.2) 50%, rgba(17,16,16,0.6) 100%);
+}
+
+/* Gold text gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #7C1410 0%, #E99332 50%, #7C1410 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hover underline animation */
+.hover-underline {
+  position: relative;
+}
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: rgb(var(--gold));
+  transition: width 0.3s ease;
+}
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* Section label style */
+.section-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #7C1410;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Noise texture overlay */
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.4;
+}
+
+/* ==========================================
+   SUNEETHABHOOMIKE LIGHT MODE OVERRIDES
+   ========================================== */
+
+/* Headings font overrides for classical Cormorant feel */
+h1, h2, h3, .font-serif {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif !important;
+}
+
+/* Override body text styles */
+body {
+  color: #232321 !important;
+}
+
+/* Force light borders */
+.border-white\/8, .border-white\/10, .border-white\/15, .border-white\/20, .border-white\/30 {
+  border-color: #E2D9D4 !important;
+}
+
+.hover\:border-gold\/25:hover, .hover\:border-gold\/30:hover, .hover\:border-gold\/40:hover {
+  border-color: #E99332 !important;
+}
+
+/* Cards & Surface blocks */
+.bg-dark-2 {
+  background-color: #F8F3F2 !important;
+}
+
+.bg-dark-3 {
+  background-color: #E2D9D4 !important;
+}
+
+.bg-dark {
+  background-color: #FFFFFF !important;
+}
+
+/* Hover Shadow for Cards */
+.group:hover .rounded-2xl, .group:hover .rounded-xl {
+  box-shadow: 0 12px 36px rgba(124, 20, 16, 0.06) !important;
+}
+
+/* Button overrides — Golden Buttons */
+.bg-gold {
+  background-color: #E99332 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #E99332 !important;
+  transition: all 0.3s ease !important;
+}
+
+.bg-gold:hover {
+  background-color: #D87F22 !important;
+  border-color: #D87F22 !important;
+  box-shadow: 0 4px 15px rgba(233, 147, 50, 0.3) !important;
+}
+
+/* Community CTA Instagram links */
+.text-gold\/80 {
+  color: #7C1410 !important;
+  font-weight: 500;
+}
+.text-gold\/80:hover {
+  color: #E99332 !important;
+}
+
+/* Accent icons with Heritage Gold */
+svg.text-gold, .text-gold svg {
+  color: #E99332 !important;
+}
+
+/* Text color overrides for light mode readability */
+.text-cream {
+  color: #232321 !important;
+}
+
+.text-cream\/70 {
+  color: rgba(35, 35, 33, 0.7) !important;
+}
+
+.text-cream\/60 {
+  color: rgba(35, 35, 33, 0.6) !important;
+}
+
+.text-cream\/55 {
+  color: rgba(35, 35, 33, 0.55) !important;
+}
+
+.text-cream\/50 {
+  color: rgba(35, 35, 33, 0.5) !important;
+}
+
+.text-cream\/45 {
+  color: rgba(35, 35, 33, 0.45) !important;
+}
+
+.text-cream\/40 {
+  color: rgba(35, 35, 33, 0.4) !important;
+}
+
+.text-cream\/30 {
+  color: rgba(35, 35, 33, 0.3) !important;
+}
+
+.text-cream\/20 {
+  color: rgba(35, 35, 33, 0.2) !important;
+}
+
+/* Background opacity overrides */
+.bg-dark\/70 {
+  background-color: rgba(248, 243, 242, 0.75) !important;
+}
+
+.bg-dark\/60 {
+  background-color: rgba(248, 243, 242, 0.7) !important;
+}
+
+.bg-dark\/98 {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+}
+
+.bg-white\/5 {
+  background-color: rgba(226, 217, 212, 0.3) !important;
+}
+
+.bg-gold\/5 {
+  background-color: rgba(233, 147, 50, 0.05) !important;
+}
+
+.bg-gold\/10 {
+  background-color: rgba(233, 147, 50, 0.1) !important;
+}
+
+.bg-gold\/15 {
+  background-color: rgba(233, 147, 50, 0.15) !important;
+}
+
+/* Border opacity overrides */
+.border-gold\/25 {
+  border-color: rgba(233, 147, 50, 0.25) !important;
+}
+
+.border-gold\/30 {
+  border-color: rgba(233, 147, 50, 0.3) !important;
+}
+
+.border-gold\/40 {
+  border-color: rgba(233, 147, 50, 0.4) !important;
+}
+
+.border-white\/10 {
+  border-color: rgba(226, 217, 212, 0.5) !important;
+}
+
+.border-white\/15 {
+  border-color: rgba(226, 217, 212, 0.6) !important;
+}
+
+.border-white\/20 {
+  border-color: rgba(226, 217, 212, 0.7) !important;
+}
+
+/* Gradient overrides for light mode */
+.from-dark\/20 {
+  --tw-gradient-from: rgba(248, 243, 242, 0.2) !important;
+}
+
+.to-dark {
+  --tw-gradient-to: rgb(255, 255, 255) !important;
+}
+
+.from-dark-2 {
+  --tw-gradient-from: rgb(248, 243, 242) !important;
+}
+
+.from-dark-3 {
+  --tw-gradient-from: rgb(226, 217, 212) !important;
+}
+
+/* Gold text */
+.text-gold {
+  color: #E99332 !important;
+}
+
+.text-gold-light {
+  color: #E99332 !important;
+}
+
+.text-gold\/90 {
+  color: rgba(233, 147, 50, 0.9) !important;
+}
+
+.text-gold\/50 {
+  color: rgba(233, 147, 50, 0.5) !important;
+}
+
+.bg-gold\/50 {
+  background-color: rgba(233, 147, 50, 0.5) !important;
+}
+
+/* Gold backgrounds */
+.from-gold\/50 {
+  --tw-gradient-from: rgba(233, 147, 50, 0.5) !important;
+}
+
+.bg-cream {
+  background-color: #232321 !important;
+}
+
+/* White text overrides (for dark section contexts) */
+.text-white\/80 {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.text-white\/\[0\.025\] {
+  color: rgba(124, 20, 16, 0.02) !important;
+}
+
+/* Footer background watermark */
+footer span.text-white\/\[0\.025\] {
+  color: rgba(124, 20, 16, 0.02) !important;
+}
+
+/* Dark card gradient for event and achievement cards */
+.from-dark\/95 {
+  --tw-gradient-from: rgba(30, 28, 28, 0.95) !important;
+}
+
+.via-dark\/45 {
+  --tw-gradient-stops: var(--tw-gradient-from), rgba(30, 28, 28, 0.45), var(--tw-gradient-to) !important;
+}
+
+.via-dark\/40 {
+  --tw-gradient-stops: var(--tw-gradient-from), rgba(30, 28, 28, 0.40), var(--tw-gradient-to) !important;
+}
+
+.via-dark\/35 {
+  --tw-gradient-stops: var(--tw-gradient-from), rgba(30, 28, 28, 0.35), var(--tw-gradient-to) !important;
+}
+
+.via-dark\/30 {
+  --tw-gradient-stops: var(--tw-gradient-from), rgba(30, 28, 28, 0.30), var(--tw-gradient-to) !important;
+}
