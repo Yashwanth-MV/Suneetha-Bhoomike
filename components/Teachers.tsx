@@ -16,7 +16,7 @@ const teachers = [
     id: 2,
     name: "Suneetha Bhoomike Team",
     role: "Community Mentors",
-    image: "/images/founder_new.jpg",
+    image: "",
     bio: "Dedicated to ensuring an inclusive, inspiring, and enriching environment for all age groups.",
     instagram: "https://www.instagram.com/suneethabhoomike/",
   },
@@ -24,7 +24,7 @@ const teachers = [
     id: 3,
     name: "Guest Artists",
     role: "Collaborators & Experts",
-    image: "/images/learn_grow.jpg",
+    image: "",
     bio: "Renowned musicians occasionally join us to lead workshops and special events like Naadotsava.",
     instagram: "https://www.instagram.com/suneethabhoomike/",
   },
@@ -32,7 +32,7 @@ const teachers = [
     id: 4,
     name: "Senior Students",
     role: "Peer Mentors",
-    image: "/images/performance.jpg",
+    image: "",
     bio: "Our experienced students perform and mentor beginners, showing true community spirit.",
     instagram: "https://www.instagram.com/suneethabhoomike/",
   },
@@ -141,18 +141,25 @@ export default function Teachers() {
             >
               {/* Image */}
               <div
-                className="relative overflow-hidden mb-4"
+                className="relative overflow-hidden mb-4 flex items-center justify-center"
                 style={{
                   aspectRatio: "3 / 4",
                   borderRadius: "1.25rem",
                   boxShadow: "0 4px 16px rgba(124,20,16,0.06)",
+                  background: teacher.image ? "transparent" : "linear-gradient(135deg, #F0E6DD 0%, #E2D4C6 100%)",
                 }}
               >
-                <img
-                  src={teacher.image}
-                  alt={teacher.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                />
+                {teacher.image ? (
+                  <img
+                    src={teacher.image}
+                    alt={teacher.name}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  />
+                ) : (
+                  <div className="font-serif text-[#C9A84C] opacity-40 transition-transform duration-700 group-hover:scale-110" style={{ fontSize: "5rem" }}>
+                    {teacher.name.charAt(0)}
+                  </div>
+                )}
                 <div
                   className="absolute inset-0 pointer-events-none transition-opacity duration-500 opacity-60 group-hover:opacity-70"
                   style={{

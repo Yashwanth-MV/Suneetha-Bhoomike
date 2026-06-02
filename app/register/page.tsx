@@ -144,7 +144,7 @@ export default function RegisterPage() {
               <div className="lg:col-span-5">
                 <div className="relative rounded-3xl overflow-hidden aspect-[4/3] sm:aspect-[1.5] lg:aspect-[4/5] border border-[#E2D9D4] bg-[#E2D9D4] shadow-[0_20px_50px_rgba(124,20,16,0.06)] group">
                   <img
-                    src="https://images.pexels.com/photos/7521177/pexels-photo-7521177.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    src="/images/music_student.jpg"
                     alt="Guiding disciples at Suneetha Bhoomike"
                     className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700"
                   />

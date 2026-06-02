@@ -82,7 +82,7 @@ export default function Hero() {
                 color: "#A0826A",
               }}
             >
-              Suneetha Bhoomike
+              Suneetha Bhoomike · Mysuru
             </span>
           </motion.div>
 
@@ -98,9 +98,9 @@ export default function Hero() {
               letterSpacing: "-0.015em",
             }}
           >
-            Where tradition
+            Where music finds
             <br />
-            meets{" "}
+            its{" "}
             <em
               style={{
                 fontStyle: "italic",
@@ -110,7 +110,7 @@ export default function Hero() {
                 backgroundClip: "text",
               }}
             >
-              musical excellence
+              true foundation
             </em>
           </motion.h1>
 
@@ -126,7 +126,7 @@ export default function Hero() {
               maxWidth: "36ch",
             }}
           >
-            Join a community of passionate learners. Personalized training for children and adults in Carnatic vocal, devotional music, and instruments.
+            Nurturing talent through Carnatic Classical Music and Sugama Sangeetha — with structured learning, performance opportunities, and genuine artistic growth for all ages.
           </motion.p>
 
           {/* CTA pair */}

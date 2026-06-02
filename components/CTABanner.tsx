@@ -21,7 +21,7 @@ export default function CTABanner() {
           {/* Background image of a music school */}
           <motion.div style={{ y: bgY }} className="absolute inset-0 scale-110">
             <img
-              src="https://images.pexels.com/photos/1645043/pexels-photo-1645043.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              src="/images/music_school_banner.png"
               alt="Music School"
               className="w-full h-full object-cover"
             />

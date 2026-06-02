@@ -9,8 +9,7 @@ const programs = [
     title: "Carnatic & Sugama Sangeetha",
     description:
       "Immerse yourself in our rich cultural heritage through structured Carnatic and Sugama Sangeetha classes for all ages.",
-    image:
-      "https://images.pexels.com/photos/1644616/pexels-photo-1644616.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "",
     href: "#classes",
   },
   {
@@ -18,8 +17,7 @@ const programs = [
     title: "Instrumental Classes",
     description:
       "Master your instrument of choice with expert guidance. We offer comprehensive training in Piano, Guitar, Violin, and Drums.",
-    image:
-      "https://images.pexels.com/photos/462442/pexels-photo-462442.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "",
     href: "#classes",
   },
   {
@@ -27,8 +25,7 @@ const programs = [
     title: "Vocal & Singing",
     description:
       "Develop your voice, breath control, and expression. Join our community of singers and discover your true potential.",
-    image:
-      "https://images.pexels.com/photos/7520744/pexels-photo-7520744.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "",
     href: "#classes",
   },
 ];
@@ -64,12 +61,24 @@ function ProgramCard({
           }}
         >
           {/* Image */}
-          <div className="relative overflow-hidden" style={{ height: "14rem" }}>
-            <img
-              src={program.image}
-              alt={program.title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-            />
+          <div
+            className="relative overflow-hidden flex items-center justify-center"
+            style={{
+              height: "14rem",
+              background: program.image ? "transparent" : "linear-gradient(135deg, #F0E6DD 0%, #E2D4C6 100%)",
+            }}
+          >
+            {program.image ? (
+              <img
+                src={program.image}
+                alt={program.title}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+              />
+            ) : (
+              <div className="font-serif text-[#C9A84C] opacity-40 transition-transform duration-700 group-hover:scale-110" style={{ fontSize: "6rem" }}>
+                {program.title.charAt(0)}
+              </div>
+            )}
             <div
               className="absolute inset-0 pointer-events-none"
               style={{

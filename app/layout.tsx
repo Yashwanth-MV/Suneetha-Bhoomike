@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import SmoothScroll from "@/lib/SmoothScroll";
-
+import Chatbot from "@/components/Chatbot";
 export const metadata: Metadata = {
   title: "Suneetha Bhoomike — School of Music, Mysuru",
   description: "Discover your musical journey with Suneetha Bhoomike, a premier school of music in Mysuru founded by Bhoomika Koundinya. Offering classes in Carnatic vocal, Sugama Sangeetha, Piano, Guitar, Violin, and Drums.",
@@ -28,7 +28,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <SmoothScroll>{children}</SmoothScroll>
+        <SmoothScroll>
+          {children}
+          <Chatbot />
+        </SmoothScroll>
       </body>
     </html>
   );

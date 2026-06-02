@@ -9,7 +9,7 @@ const schedule = [
     class: "ಸುನೀತಭೂಮಿಕೆಯ ಮೊದಲ ಹಬ್ಬ ನಾದೋತ್ಸವ",
     teacher: "Suneetha Bhoomike",
     level: "All levels",
-    image: "https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "",
     description: "The grand annual celebration of music and arts by Suneetha Bhoomike, showcasing talented students and local musical culture.",
   },
   {
@@ -18,7 +18,7 @@ const schedule = [
     class: "Music & Culture Workshop",
     teacher: "Bhoomika Koundinya",
     level: "Intermediate",
-    image: "https://images.pexels.com/photos/2263436/pexels-photo-2263436.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "",
     description: "Interactive monthly workshop exploring classical rhythms, expression, and cultural depth in Indian classical music.",
   },
   {
@@ -27,7 +27,7 @@ const schedule = [
     class: "Student Showcases",
     teacher: "Suneetha Bhoomike",
     level: "All levels",
-    image: "https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "",
     description: "A platform for students to overcome stage fright, present their learning, and celebrate music with their families.",
   },
   {
@@ -36,7 +36,7 @@ const schedule = [
     class: "Group Singing Sessions",
     teacher: "Bhoomika Koundinya",
     level: "Beginner",
-    image: "https://images.pexels.com/photos/7520744/pexels-photo-7520744.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "",
     description: "Gather with community members to sing together, learn traditional songs, and share musical joy without any judgment.",
   },
 ];
@@ -183,14 +183,28 @@ export default function Schedule() {
                   background: "#FFFFFF",
                 }}
               >
-                {/* Event Image */}
-                <div className="relative overflow-hidden" style={{ height: "11rem" }}>
-                  <img
-                    src={item.image}
-                    alt={item.class}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                  />
-                </div>
+                  {/* Image */}
+                  <div
+                    className="relative overflow-hidden mb-5 sm:mb-0 sm:mr-6 flex-shrink-0 flex items-center justify-center"
+                    style={{
+                      width: "100%",
+                      aspectRatio: "4 / 3",
+                      borderRadius: "1rem",
+                      background: item.image ? "transparent" : "linear-gradient(135deg, #F0E6DD 0%, #E2D4C6 100%)",
+                    }}
+                  >
+                    {item.image ? (
+                      <img
+                        src={item.image}
+                        alt={item.day}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                      />
+                    ) : (
+                      <div className="font-serif text-[#C9A84C] opacity-40 transition-transform duration-700 group-hover:scale-110" style={{ fontSize: "6rem" }}>
+                        {item.day.charAt(0)}
+                      </div>
+                    )}
+                  </div>
 
                 {/* Text */}
                 <div className="p-5">

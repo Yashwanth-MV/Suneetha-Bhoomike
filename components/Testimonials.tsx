@@ -7,42 +7,42 @@ const achievements = [
     id: 1,
     student: "Tejaswini",
     achievement: "Best Singer Recognition",
-    url: "https://images.pexels.com/photos/7520744/pexels-photo-7520744.jpeg?auto=compress&cs=tinysrgb&w=800",
+    url: "",
     description: "Honored with the prestigious Best Singer award at the annual district vocal showcase.",
   },
   {
     id: 2,
     student: "Shraddha",
     achievement: "Classical Performance",
-    url: "https://images.pexels.com/photos/1644616/pexels-photo-1644616.jpeg?auto=compress&cs=tinysrgb&w=800",
+    url: "",
     description: "A mesmerizing Carnatic vocal recital performance during the Naadotsava festival.",
   },
   {
     id: 3,
     student: "Aditi",
     achievement: "Violin Solo Performance",
-    url: "https://images.pexels.com/photos/462442/pexels-photo-462442.jpeg?auto=compress&cs=tinysrgb&w=800",
+    url: "",
     description: "Performed a flawless solo violin recital for the community cultural gathering.",
   },
   {
     id: 4,
     student: "Rahul & Group",
     achievement: "Ensemble Performance",
-    url: "https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800",
+    url: "",
     description: "Energetic student instrumental band performance showcasing collaborative rhythm and harmony.",
   },
   {
     id: 5,
     student: "Meera",
     achievement: "Light Music Showcase",
-    url: "https://images.pexels.com/photos/3756766/pexels-photo-3756766.jpeg?auto=compress&cs=tinysrgb&w=800",
+    url: "",
     description: "Celebrated for her expressive delivery in the regional Sugama Sangeetha competition.",
   },
   {
     id: 6,
     student: "Karthik",
     achievement: "Piano Recital",
-    url: "https://images.pexels.com/photos/1246437/pexels-photo-1246437.jpeg?auto=compress&cs=tinysrgb&w=800",
+    url: "",
     description: "Successfully completed her advanced level piano presentation with outstanding honors.",
   },
 ];
@@ -155,16 +155,27 @@ export default function Testimonials() {
                 }}
               >
                 {/* Image */}
-                <div className="relative overflow-hidden" style={{ height: "13rem" }}>
-                  <img
-                    src={item.url}
-                    alt={item.achievement}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                  />
+                <div
+                  className="relative w-16 h-16 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center m-6"
+                  style={{
+                    background: item.url ? "transparent" : "linear-gradient(135deg, #F0E6DD 0%, #E2D4C6 100%)",
+                  }}
+                >
+                  {item.url ? (
+                    <img
+                      src={item.url}
+                      alt={item.student}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="font-serif text-[#C9A84C] opacity-60 text-2xl">
+                      {item.student.charAt(0)}
+                    </div>
+                  )}
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-6 pt-0">
                   <span
                     className="font-medium mb-2 block"
                     style={{

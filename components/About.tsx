@@ -8,7 +8,7 @@ const featured = {
   label: "Our Story",
   title: "Meet Our Founder",
   description:
-    "Bhoomika Koundinya founded Suneetha Bhoomike to share the transformative power of Carnatic music. With over 15 years of teaching experience and a deep reverence for tradition, she guides every student through a personal journey — building confidence, discipline, and a lifelong love for music.",
+    "Bhoomika Koundinya founded Suneetha Bhoomike with a singular vision — to make quality classical music education accessible to all. A gold medalist with a Master's degree in Music from the University of Mysore, she trained under Guru Dr. Srilatha and continues her studies under N.R. Prashanth. She is also pursuing her PhD under the guidance of Vidwan Mysore Manjunath. Her teaching is rooted in tradition, warmth, and a deep reverence for Karnataka's musical heritage.",
   cta: "Meet the Founder",
   href: "#teachers",
   image: "/images/founder_new.jpg",
@@ -19,7 +19,7 @@ const cards = [
     label: "Learning",
     title: "Learn & Grow Together",
     description:
-      "Our classes blend structured Carnatic training with a warm, supportive environment. Students of all ages develop technique, raga knowledge, and musical confidence through personalized guidance.",
+      "Our classes blend structured Carnatic training with a warm, nurturing environment. Students explore Raga, Tala, Bhaavageethe, Devaranama, Folk, and Devotional songs — developing technique, confidence, and a genuine love for music.",
     cta: "View Student Stories",
     href: "#classes",
     image: "/images/learn_grow.jpg",
@@ -28,7 +28,7 @@ const cards = [
     label: "Performance",
     title: "Moments On Stage",
     description:
-      "From intimate recitals to our annual Naadotsava showcase, students experience the thrill of performing. These milestones build artistry and celebrate the beauty of shared music.",
+      "From intimate recitals to our grand annual Naadotsava showcase, students gain real stage experience. These milestones build artistry, overcome performance anxiety, and celebrate the joy of sharing music with families and the community.",
     cta: "Explore Performances",
     href: "#schedule",
     image: "/images/performance.jpg",
@@ -123,7 +123,7 @@ export default function About() {
               maxWidth: "52ch",
             }}
           >
-            Suneetha Bhoomike was created to nurture a love for music, culture, and performance. What began as a small learning circle has grown into a vibrant community of passionate students and families.
+            Suneetha Bhoomike was founded to nurture a deep love for music, cultural heritage, and artistic expression. What began as a small learning circle in Mysuru has grown into a vibrant community dedicated to preserving and promoting Karnataka&apos;s classical musical traditions.
           </motion.p>
         </div>
 

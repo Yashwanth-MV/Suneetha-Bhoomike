@@ -9,42 +9,42 @@ const classes = [
     title: "Carnatic Vocal",
     duration: "Ongoing",
     description: "Traditional classical music learning with emphasis on shruti and laya.",
-    thumbnail: "https://images.pexels.com/photos/1644616/pexels-photo-1644616.jpeg?auto=compress&cs=tinysrgb&w=800",
+    thumbnail: "",
   },
   {
     id: "sugama-sangeetha",
     title: "Sugama Sangeetha",
     duration: "Ongoing",
     description: "Explore the beauty of light music and Bhavageethe.",
-    thumbnail: "https://images.pexels.com/photos/3756766/pexels-photo-3756766.jpeg?auto=compress&cs=tinysrgb&w=800",
+    thumbnail: "",
   },
   {
     id: "piano-keyboard",
     title: "Piano & Keyboard",
     duration: "Ongoing",
     description: "Learn keyboard techniques and contemporary playing styles.",
-    thumbnail: "https://images.pexels.com/photos/1246437/pexels-photo-1246437.jpeg?auto=compress&cs=tinysrgb&w=800",
+    thumbnail: "",
   },
   {
     id: "guitar",
     title: "Guitar",
     duration: "Ongoing",
     description: "Master chords, strumming, and fingerstyle techniques.",
-    thumbnail: "https://images.pexels.com/photos/1407322/pexels-photo-1407322.jpeg?auto=compress&cs=tinysrgb&w=800",
+    thumbnail: "",
   },
   {
     id: "violin",
     title: "Violin",
     duration: "Ongoing",
     description: "Develop bowing techniques and expressive playing.",
-    thumbnail: "https://images.pexels.com/photos/462442/pexels-photo-462442.jpeg?auto=compress&cs=tinysrgb&w=800",
+    thumbnail: "",
   },
   {
     id: "drums",
     title: "Drums",
     duration: "Ongoing",
     description: "Build rhythm, timing, and percussive skills.",
-    thumbnail: "https://images.pexels.com/photos/1751731/pexels-photo-1751731.jpeg?auto=compress&cs=tinysrgb&w=800",
+    thumbnail: "",
   },
 ];
 
@@ -175,12 +175,24 @@ export default function Classes() {
                   }}
                 >
                   {/* Thumbnail */}
-                  <div className="relative overflow-hidden" style={{ height: "12rem" }}>
-                    <img
-                      src={cls.thumbnail}
-                      alt={cls.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                    />
+                  <div
+                    className="relative overflow-hidden flex items-center justify-center"
+                    style={{
+                      height: "12rem",
+                      background: cls.thumbnail ? "transparent" : "linear-gradient(135deg, #F0E6DD 0%, #E2D4C6 100%)",
+                    }}
+                  >
+                    {cls.thumbnail ? (
+                      <img
+                        src={cls.thumbnail}
+                        alt={cls.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                      />
+                    ) : (
+                      <div className="font-serif text-[#C9A84C] opacity-40 transition-transform duration-700 group-hover:scale-110" style={{ fontSize: "5rem" }}>
+                        {cls.title.charAt(0)}
+                      </div>
+                    )}
                   </div>
 
                   {/* Content */}
